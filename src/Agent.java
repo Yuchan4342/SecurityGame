@@ -1,10 +1,8 @@
 public interface Agent {
 
-    void strategy(int attack_strategy, int defence_strategy);
+    void strategy(int attack_strategy, int defence_strategy,int reward);
     int action();
-    void addReward(int reward);
-    int score();
-    String name();
-    void reset_score();
+    String get_name();
+
 
 }

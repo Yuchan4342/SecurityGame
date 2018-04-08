@@ -6,17 +6,22 @@ import java.util.Calendar;
 
 
 public class ResultLogger {
+    String currentTime;
 
-    public static void csvprinter(String attack_name, String defence_name,int attack_win,int defence_win){
-        String currentTime;
+    public ResultLogger(){
+
         Calendar cTime = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HHmmss");
         currentTime = sdf.format(cTime.getTime());
+    }
+
+    public  void csvprinter(String attack_name, String defence_name,int attack_win,int defence_win){
+
 
 
 
         try {
-            FileWriter fw = new FileWriter("["+currentTime+"]result.csv",true);
+            FileWriter fw = new FileWriter("["+this.currentTime+"]result.csv",true);
             fw.write(attack_name+","+defence_name+","+attack_win+","+defence_win+"\n");
             fw.close();
         }catch (IOException ex){

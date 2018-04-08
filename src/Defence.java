@@ -1,51 +1,42 @@
-import java.util.Random;
 
 public class Defence implements Agent {
 
-    public int strategy;
-    public int reward;
+    public int strategy;                                //エリアAを攻める：strategy=0, エリアBを攻める:strategy=1
     public String name;
-    static final int[][] defence_reward={{5,-1},         //警備されている①を攻撃：5,警備されていない②を攻撃:-1
-                                        {-5,2}};         //警備されていない①を攻撃：-５,警備されている②を攻撃：2
+    static final int[][] defence_reward={{5,-1},         //警備されているAを攻撃：5,警備されていないBを攻撃:-1
+                                        {-5,3}};         //警備されていないAを攻撃：-５,警備されているBを攻撃：3
 
-    public Defence(int i){
-        this.reward=0;
-        this.name="守ります"+i;
+    public Defence(){
 
-    }
+        this.name="";
 
-    @Override
-    public void strategy(int attack_strategy, int defence_strategy) {
-
-        Random rand = new Random();
-//        this.strategy = rand.nextInt(2);
-        if(attack_strategy==0){ this.strategy=0;}
-        else{this.strategy = rand.nextInt(2);}
+        /**
+        * 結果に表示する名前を決めてください．
+        * */
 
     }
 
     @Override
-    public int action(){
+    public void strategy(int attack_strategy, int defence_strategy,int reward) {
 
-        return strategy;
+        this.strategy =0 ;
+
+        /**
+        * ここに行動戦略を書いてください
+        *
+        * attack_strategy: 攻撃側が前回攻めたエリア， defence_strategy: 警備側が前回守ったエリア, reward: 前回自分が得たreward
+        * strategyフィールドに次のステップで守るエリアを代入してください
+        *
+        * */
+
     }
 
     @Override
-    public void addReward(int reward) {
-        this.reward+=reward;
-    }
+    public int action(){ return strategy; }
 
     @Override
-    public int score(){
-        return this.reward;
-    }
-
-    @Override
-    public String name(){
+    public String get_name(){
         return this.name;
     }
 
-    public void reset_score(){
-        this.reward=0;
-    }
 }
