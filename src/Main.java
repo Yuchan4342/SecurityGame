@@ -41,21 +41,21 @@ public class Main {
 
 
         //プレイヤー選択
-        for (Agent attack: attacker_list){
-            for (Agent defence: defence_list){
+        for (Agent attack: attacker_list) {
+            for (Agent defence : defence_list) {
 
-                ATTACK_WIN=0;
-                DEFENCE_WIN=0;
+                ATTACK_WIN = 0;
+                DEFENCE_WIN = 0;
 
-                while(ATTACK_WIN+DEFENCE_WIN!=TRIAL) {
+                while (ATTACK_WIN + DEFENCE_WIN != TRIAL) {
                     for (int i = 0; i < STEP; i++) {
 
                         //ゲーム
                         game(defence, attack);
 
                         //戦略決定
-                        attack.strategy(attack.action(),defence.action());
-                        defence.strategy(attack.action(),defence.action());
+                        attack.strategy(attack.action(), defence.action());
+                        defence.strategy(attack.action(), defence.action());
 
 
                     }
@@ -74,15 +74,14 @@ public class Main {
                     defence.reset_score();
 
 
-
                 }
 
-                System.out.println("["+attack.name()+"] VS ["+defence.name()+"]: "+ATTACK_WIN+":"+DEFENCE_WIN);
+                System.out.println("[" + attack.name() + "] VS [" + defence.name() + "]: " + ATTACK_WIN + ":" + DEFENCE_WIN);
+
+
+                ResultLogger.csvprinter(attack.name(), defence.name(), ATTACK_WIN, DEFENCE_WIN);
             }
         }
-
-
-
 
 
     }
