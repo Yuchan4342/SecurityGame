@@ -33,7 +33,7 @@ public class Main {
         ArrayList<Agent> defence_list = new ArrayList<Agent>();
 
         //プレイヤー追加
-        for (int i=0;i<2;i++) {
+        for (int i=0;i<4;i++) {
             attacker_list.add(new Attack(i));
             defence_list.add(new Defence(i));
         }
