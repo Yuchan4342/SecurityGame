@@ -1,3 +1,4 @@
+package utility;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,9 +8,11 @@ import java.util.Calendar;
 
 public class ResultLogger {
     String currentTime;
+    String taskName;
 
-    public ResultLogger(){
+    public ResultLogger(String taskName){
 
+        this.taskName = taskName;
         Calendar cTime = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HHmmss");
         currentTime = sdf.format(cTime.getTime());
@@ -21,7 +24,7 @@ public class ResultLogger {
 
 
         try {
-            FileWriter fw = new FileWriter("["+this.currentTime+"]result.csv",true);
+            FileWriter fw = new FileWriter("["+taskName+":"+this.currentTime+"]result.csv",true);
             fw.write(attack_name+","+defence_name+","+attack_win+","+defence_win+"\n");
             fw.close();
         }catch (IOException ex){
