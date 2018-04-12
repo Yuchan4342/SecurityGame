@@ -1,8 +1,6 @@
 
-public class Attack implements Agent{
+public class Attack extends Agent{
 
-    public int strategy;                                //エリアAを攻める：strategy=0, エリアBを攻める:strategy=1
-    public String name;
     static final int[][] attack_reward={{-3,1},         //警備されているAを攻撃：-3,警備されていないBを攻撃:1
                                           {5,-1}};      //警備されていないAを攻撃：５,警備されているBを攻撃：-1
 
@@ -37,5 +35,6 @@ public class Attack implements Agent{
     public String get_name(){
         return this.name;
     }
+
 
 }

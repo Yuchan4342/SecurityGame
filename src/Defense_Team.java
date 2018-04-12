@@ -1,10 +1,6 @@
 
-public class Defense_Team implements Agent {
+public class Defense_Team extends Agent {
 
-    public int strategy;                                //エリアAを攻める：strategy=0, エリアBを攻める:strategy=1
-    public String name;
-    static final int[][] defense_reward={{5,-1},         //警備されているAを攻撃：5,警備されていないBを攻撃:-1
-                                        {-5,3}};         //警備されていないAを攻撃：-５,警備されているBを攻撃：3
 
     public Defense_Team(){
 
@@ -17,7 +13,7 @@ public class Defense_Team implements Agent {
     }
 
     @Override
-    public void strategy(int attack_strategy, int defense_strategy,int reward) {
+    public void strategy() {
 
         this.strategy =0 ;
 

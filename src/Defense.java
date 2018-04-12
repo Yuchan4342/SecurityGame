@@ -1,9 +1,7 @@
 
-public class Defense implements Agent {
+public class Defense extends Agent {
 
-    public int strategy;                                //エリアAを攻める：strategy=0, エリアBを攻める:strategy=1
-    public String name;
-    static final int[][] defense_reward={{5,-1},         //警備されているAを攻撃：5,警備されていないBを攻撃:-1
+       static final int[][] defense_reward={{5,-1},         //警備されているAを攻撃：5,警備されていないBを攻撃:-1
                                         {-5,3}};         //警備されていないAを攻撃：-５,警備されているBを攻撃：3
 
     public Defense(){
