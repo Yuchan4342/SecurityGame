@@ -14,7 +14,6 @@ public class Task2 {
     static int ATTACK_SCORE = 0;
     static int DEFENSE_SCORE = 0;
 
-    public RewardScheme rewardScheme = new Reward_Task2();
 
     static private ResultLogger result_csv = new ResultLogger("Task2");
 

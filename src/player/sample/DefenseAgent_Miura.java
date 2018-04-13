@@ -3,6 +3,8 @@ package player.sample;
 import player.Agent;
 import reward.Reward_Task1;
 
+import java.util.Random;
+
 public class DefenseAgent_Miura extends Agent{
 
     public DefenseAgent_Miura(){
@@ -26,6 +28,7 @@ public class DefenseAgent_Miura extends Agent{
 
         //戦略名[エリアA死守]
         this.action= 0;
+
 
         /**
          * ここに行動戦略を書いてください
