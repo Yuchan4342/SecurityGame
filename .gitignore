@@ -1,0 +1,4 @@
+# .gitignore
+# .gitignore
+bin/*
+.DS_Store
