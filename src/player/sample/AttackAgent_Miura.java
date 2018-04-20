@@ -32,7 +32,6 @@ public class AttackAgent_Miura extends Agent{
 
     public void strategy(int defense_action,int reward) {
 
-        System.out.println(Task1.ATTACK_SCORE);
 //
 //        if(rand.nextDouble()<q){
 //            this.action=0;
