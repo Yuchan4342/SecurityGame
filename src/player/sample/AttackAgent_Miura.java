@@ -3,10 +3,13 @@ package player.sample;
 
 import player.Agent;
 import reward.Reward_Task1;
+import task.Task1;
 
 import java.util.Random;
 
 public class AttackAgent_Miura extends Agent{
+
+    Random rand = new Random();
 
     public AttackAgent_Miura(){
 
@@ -29,9 +32,19 @@ public class AttackAgent_Miura extends Agent{
 
     public void strategy(int defense_action,int reward) {
 
-        //戦略名[ランダム]
-        Random rand = new Random();
-        this.action= rand.nextInt(2);
+        System.out.println(Task1.ATTACK_SCORE);
+//
+//        if(rand.nextDouble()<q){
+//            this.action=0;
+//        }else{
+//            this.action=1;
+//        }
+
+        if(defense_action==0){
+            this.action=0;
+        }else{
+            this.action=1;
+        }
 
         /**
         * ここに行動戦略を書いてください
@@ -54,6 +67,9 @@ public class AttackAgent_Miura extends Agent{
     public String get_name(){
         return this.name;
     }
+
+    @Override
+    public void afterGame(){}
 
 
 }

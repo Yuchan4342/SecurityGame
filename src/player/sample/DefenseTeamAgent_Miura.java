@@ -47,6 +47,8 @@ public class DefenseTeamAgent_Miura extends Agent{
     public String get_name(){
         return this.name;
     }
+    @Override
+    public void afterGame(){}
 
 
 }
