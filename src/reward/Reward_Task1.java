@@ -17,6 +17,5 @@ public class Reward_Task1 extends RewardScheme{
 
     }
 
-    public void test(){}
 
 }

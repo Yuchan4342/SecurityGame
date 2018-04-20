@@ -13,11 +13,10 @@ public class Task1 {
 
     static int TRIAL;       //繰り返しゲーム数
 
-    public static int ATTACK_SCORE = 0;
-    public static int DEFENSE_SCORE = 0;
+    static int ATTACK_SCORE = 0;
+    static int DEFENSE_SCORE = 0;
 
-    static int A=0;
-    static int B=0;
+
 
 
     static private ResultLogger result_csv = new ResultLogger("Task1");
@@ -31,8 +30,6 @@ public class Task1 {
         int attack_reward = attack.getReward(defense.action());
         int defense_reward = defense.getReward(attack.action());
 
-        A+=defense.action();
-        B+=attack.action();
 
         //rewardを各プレイヤーのスコアに追加
         ATTACK_SCORE += attack_reward;
@@ -87,6 +84,7 @@ public class Task1 {
 
                 }
 
+                //対戦終了後，後処理を行う
                 defense.afterGame();
                 attack.afterGame();
 
@@ -106,7 +104,6 @@ public class Task1 {
                 DEFENSE_SCORE = 0;
             }
 
-            System.out.println((trial-A)+":"+(trial-B));
         }
     }
 

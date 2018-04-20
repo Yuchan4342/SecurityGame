@@ -8,9 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Task1.start(100);
-
-        System.out.println(3.0/5.0+","+2.0/7.0);
+        Task1.start(500);
 //        Task2.start(500);
 
 

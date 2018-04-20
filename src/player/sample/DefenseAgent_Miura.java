@@ -28,12 +28,8 @@ public class DefenseAgent_Miura extends Agent{
     public void strategy(int attack_action,int reward) {
 
 
-        double p = 0.62;
-        //戦略名[エリアA死守]
-//        double p = 0.55;
-//        this.action= 0;
-//        Random rand = new Random();
-        if(rand.nextDouble()<p){
+          Random rand = new Random();
+        if(rand.nextDouble()<0.3){
             this.action=0;
         }else{
             this.action=1;
