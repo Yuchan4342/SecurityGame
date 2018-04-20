@@ -48,6 +48,11 @@ abstract public class Team {
     public String get_name(){
         return name;
     }
+    public void afterGame(){
+        for (Agent agent:agent_list){
+            agent.afterGame();
+        }
+    }
 
 
 

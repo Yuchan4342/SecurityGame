@@ -17,6 +17,8 @@ public class Task1 {
     static int DEFENSE_SCORE = 0;
 
 
+
+
     static private ResultLogger result_csv = new ResultLogger("Task1");
 
 
@@ -28,16 +30,20 @@ public class Task1 {
         int attack_reward = attack.getReward(defense.action());
         int defense_reward = defense.getReward(attack.action());
 
+
         //rewardを各プレイヤーのスコアに追加
         ATTACK_SCORE += attack_reward;
         DEFENSE_SCORE += defense_reward;
 
-        String str = String.format("攻撃側:%d, 警備側:%d, score(%d:%d)",attack.action(),defense.action,ATTACK_SCORE,DEFENSE_SCORE);
+        String str = String.format("攻撃側:%d, 警備側:%d,[%d:%d] score(%d:%d)",attack.action(),defense.action,attack_reward,defense_reward,
+                ATTACK_SCORE,DEFENSE_SCORE);
         System.out.println(str);
 
         //各プレイヤーの次の戦略を決定する
         attack.strategy(defense.action(), attack_reward);
         defense.strategy(attack.action(), defense_reward);
+
+
 
     }
 
@@ -67,7 +73,6 @@ public class Task1 {
         );
 
 
-
         //プレイヤー選択(攻撃側と警備側の総当たり)
         for (Agent attack : team_Attack) {
             for (Agent defense : team_Defense) {
@@ -79,8 +84,12 @@ public class Task1 {
 
                 }
 
+                //対戦終了後，後処理を行う
+                defense.afterGame();
+                attack.afterGame();
+
                 //ゲーム結果をcsvファイルに出力する
-                result_csv.csvprinter(attack.get_name(), defense.get_name(), ATTACK_SCORE, DEFENSE_SCORE);
+//                result_csv.csvprinter(attack.get_name(), defense.get_name(), ATTACK_SCORE, DEFENSE_SCORE);
 
                 if (ATTACK_SCORE > DEFENSE_SCORE) {
                     System.out.println("攻撃側の勝ち");
@@ -94,6 +103,7 @@ public class Task1 {
                 ATTACK_SCORE = 0;
                 DEFENSE_SCORE = 0;
             }
+
         }
     }
 

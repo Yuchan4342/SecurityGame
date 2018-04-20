@@ -102,6 +102,10 @@ public class Task2 {
 
                 }
 
+                Defense_team.afterGame();
+                Attack_team.afterGame();
+
+
                 //ゲーム結果をcsvファイルに出力する
                 result_csv.csvprinter(Attack_team.get_name(), Defense_team.get_name(), ATTACK_SCORE, DEFENSE_SCORE);
 
