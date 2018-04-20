@@ -7,6 +7,8 @@ import java.util.Random;
 
 public class DefenseAgent_Miura extends Agent{
 
+    Random rand = new Random();
+
     public DefenseAgent_Miura(){
 
         /**
@@ -26,9 +28,16 @@ public class DefenseAgent_Miura extends Agent{
     public void strategy(int attack_action,int reward) {
 
 
+        double p = 0.62;
         //戦略名[エリアA死守]
-        this.action= 0;
-
+//        double p = 0.55;
+//        this.action= 0;
+//        Random rand = new Random();
+        if(rand.nextDouble()<p){
+            this.action=0;
+        }else{
+            this.action=1;
+        }
 
         /**
          * ここに行動戦略を書いてください
@@ -51,6 +60,8 @@ public class DefenseAgent_Miura extends Agent{
     public String get_name(){
         return this.name;
     }
+    @Override
+    public void afterGame(){}
 
 
 }

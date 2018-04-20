@@ -14,6 +14,7 @@ abstract public class Agent {
 
         public int action() { return action; }
         public String get_name(){ return this.name; }
+        public void afterGame(){}
 
 
 }

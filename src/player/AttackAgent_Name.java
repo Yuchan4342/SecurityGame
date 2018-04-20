@@ -50,5 +50,8 @@ public class AttackAgent_Name extends Agent{
         return this.name;
     }
 
+    @Override
+    public void afterGame(){}
+
 
 }
