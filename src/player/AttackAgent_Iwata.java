@@ -3,19 +3,19 @@ package player;
 
 import reward.Reward_Task1;
 
-public class AttackAgent_Name extends Agent{
+public class AttackAgent_Iwata extends Agent{
 
-    public AttackAgent_Name(){
+    public AttackAgent_Iwata(){
 
         /**
          * 結果に表示する名前を決めてください．
          **/
-        this.name = "";
+        this.name = "yiwata";
 
         /**
          * ゲーム1回目の行動(初手)をきめてください．
          **/
-        this.action = 0;
+        this.action = 1;
 
         this.rewardScheme = new Reward_Task1();
 
@@ -26,7 +26,7 @@ public class AttackAgent_Name extends Agent{
 
     public void strategy(int defense_action,int reward) {
 
-        this.action= 0;
+        this.action= 1;
 
         /**
         * ここに行動戦略を書いてください

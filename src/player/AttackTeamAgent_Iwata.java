@@ -1,13 +1,13 @@
 package player;
 
-public class AttackTeamAgent_Name extends Agent{
+public class AttackTeamAgent_Iwata extends Agent{
 
-    public AttackTeamAgent_Name(){
+    public AttackTeamAgent_Iwata(){
 
         /**
          * 結果に表示する名前を決めてください．
          **/
-        this.name = "";
+        this.name = "yiwata";
 
         /**
          * ゲーム1回目の行動(初手)をきめてください．

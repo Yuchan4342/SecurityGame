@@ -59,11 +59,12 @@ public class Task1 {
 
         //プレイヤー追加
         Collections.addAll(team_Attack,
-                new AttackAgent_Miura()
+                // new AttackAgent_Miura()
 
                 /**
                  * ここに自分のオブジェクトを突っ込めば試せる．
                  */
+                new AttackAgent_Iwata()
         );
         Collections.addAll(team_Defense,
                 new DefenseAgent_Miura()
