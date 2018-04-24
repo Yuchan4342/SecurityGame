@@ -11,6 +11,7 @@ public class AttackAgent_Miura extends Agent{
 
     Random rand = new Random();
 
+
     public AttackAgent_Miura(){
 
         /**
@@ -33,7 +34,8 @@ public class AttackAgent_Miura extends Agent{
     public void strategy(int defense_action,int reward) {
 
 
-        if(defense_action==0){
+     Random rand = new Random();
+        if(rand.nextDouble()<0.69){
             this.action=0;
         }else{
             this.action=1;
