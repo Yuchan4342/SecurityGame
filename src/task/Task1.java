@@ -11,7 +11,7 @@ import java.util.Collections;
 
 public class Task1 {
 
-    static int TRIAL;       //繰り返しゲーム数
+    private static int TRIAL;       //繰り返しゲーム数
 
     static int ATTACK_SCORE = 0;
     static int DEFENSE_SCORE = 0;
@@ -26,22 +26,26 @@ public class Task1 {
     //課題3-1 個人戦
     public static void game(Agent defense, Agent attack) {
 
+        int attack_action = attack.action();
+        int defense_action = defense.action();
+
+
         //お互いの行動をもとにrewardを決定
-        int attack_reward = attack.getReward(defense.action());
-        int defense_reward = defense.getReward(attack.action());
+        int attack_reward = attack.getReward(defense_action);
+        int defense_reward = defense.getReward(attack_action);
 
 
         //rewardを各プレイヤーのスコアに追加
         ATTACK_SCORE += attack_reward;
         DEFENSE_SCORE += defense_reward;
 
-        String str = String.format("攻撃側:%d, 警備側:%d,[%d:%d] score(%d:%d)",attack.action(),defense.action,attack_reward,defense_reward,
+        String str = String.format("攻撃側:%d, 警備側:%d,[%d:%d] score(%d:%d)",attack_action,defense_action,attack_reward,defense_reward,
                 ATTACK_SCORE,DEFENSE_SCORE);
-        System.out.println(str);
+//        System.out.println(str);
 
         //各プレイヤーの次の戦略を決定する
-        attack.strategy(defense.action(), attack_reward);
-        defense.strategy(attack.action(), defense_reward);
+        attack.strategy(defense_action, attack_reward);
+        defense.strategy(attack_action, defense_reward);
 
 
 
@@ -58,15 +62,17 @@ public class Task1 {
 
 
         //プレイヤー追加
-        Collections.addAll(team_Attack,
-                new AttackAgent_Miura()
+        Collections.addAll(team_Attack
+//                ,new AttackAgent_Miura()
+                ,new AttackAgent_Yamauchi()
 
                 /**
                  * ここに自分のオブジェクトを突っ込めば試せる．
                  */
         );
-        Collections.addAll(team_Defense,
-                new DefenseAgent_Miura()
+        Collections.addAll(team_Defense
+                ,new DefenseAgent_Miura()
+//                ,new DefenseAgent_Miura()
                 /**
                  * ここに自分のオブジェクトを突っ込めば試せる．
                  */
