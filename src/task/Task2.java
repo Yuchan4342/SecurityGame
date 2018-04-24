@@ -26,6 +26,9 @@ public class Task2 {
         Attack_team.action();
         Defense_team.action();
 
+        int[] defense_area = Defense_team.getArea();
+        int[] attack_area = Attack_team.getArea();
+
         //各エリアの人数に従いrewardを決定
 
         int attack_reward_AREA_A = Attack_team.getReward(0,Defense_team.getAREA_A());
@@ -44,8 +47,8 @@ public class Task2 {
         System.out.println(str);
 
         //各チームの次の戦略を決定する
-        Attack_team.strategy(Defense_team.getArea(),(attack_reward_AREA_A+attack_reward_AREA_B));
-        Defense_team.strategy(Attack_team.getArea(),(defense_reward_AREA_A+defense_reward_AREA_B));
+        Attack_team.strategy(defense_area,(attack_reward_AREA_A+attack_reward_AREA_B));
+        Defense_team.strategy(attack_area,(defense_reward_AREA_A+defense_reward_AREA_B));
 
         //各エリアの人数をリセットする
         Attack_team.resetAREA();
