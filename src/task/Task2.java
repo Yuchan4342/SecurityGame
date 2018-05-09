@@ -69,14 +69,14 @@ public class Task2 {
         /**
          * ここでチームを作る
          * **/
-        Team team_Attack_sample = new AttackTeam("Attack_sample");
+        Team team_Attack = new AttackTeam("Attack_team");
         Team team_Defense_sample = new DefenseTeam("Defense_sample");
 
 
 
         //チーム追加
         Collections.addAll(Attack_team_list,
-                team_Attack_sample
+                team_Attack
 
                 /**
                  *ここに作ったチームを追加する
