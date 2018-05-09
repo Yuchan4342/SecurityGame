@@ -28,6 +28,9 @@ public class AttackTeamAgent_Iwata extends Agent{
         * actionフィールドに次のステップで攻めるエリアを代入してください
         *
         * */
+    	if(this.action == 0) this.action = 1;
+    	else if(defense_action >= 2) this.action = 0;
+    	else this.action = 1;
     }
 
     @Override
