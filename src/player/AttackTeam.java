@@ -10,11 +10,11 @@ public class AttackTeam extends Team {
         super(name);
 
         Collections.addAll(agent_list,
-                new AttackTeamAgent_Iwata(),
-                new AttackTeamAgent_Iwata(),
-                new AttackTeamAgent_Iwata(),
-                new AttackTeamAgent_Iwata(),
-                new AttackTeamAgent_Iwata()
+                new AttackTeamAgent_Iwata1(),
+                new AttackTeamAgent_Iwata1(),
+                new AttackTeamAgent_Iwata1(),
+                new AttackTeamAgent_Iwata1(),
+                new AttackTeamAgent_Iwata1()
                 /**
                  * ここにプレイヤーを突っ込めば試せる．
                  */

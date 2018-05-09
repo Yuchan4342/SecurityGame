@@ -1,8 +1,8 @@
 package player;
 
-public class AttackTeamAgent_Iwata extends Agent{
+public class AttackTeamAgent_Iwata1 extends Agent{
 
-    public AttackTeamAgent_Iwata(){
+    public AttackTeamAgent_Iwata1(){
 
         /**
          * 結果に表示する名前を決めてください．
